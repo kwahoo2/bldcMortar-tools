@@ -32,7 +32,7 @@ class Widget(Base, Form):
             bytearr = b'SP' + dir_byte + b'\x00' + struct.pack("<l", self.speed_mot_0)
             # await self.handle_send(bytearr)
             self.append_command(bytearr)
-            self.logEdit.insertPlainText("Send command: " + str(bytearr) + "\n")
+            self.logEdit.insertPlainText("Send command: (" + bytearr[0:3].decode("utf-8")+") " + bytearr.hex(' ') + "\n")
 
         if id == 1:
             if self.dir_1_is_fwd is True:
@@ -43,17 +43,17 @@ class Widget(Base, Form):
             bytearr = b'SP' + dir_byte + b'\x01' + struct.pack("<l", self.speed_mot_1)
             # await self.handle_send(bytearr)
             self.append_command(bytearr)
-            self.logEdit.insertPlainText("Send command: " + str(bytearr) + "\n")
+            self.logEdit.insertPlainText("Send command: (" + bytearr[0:3].decode("utf-8")+") "+ bytearr.hex(' ') + "\n")
 
     @qasync.asyncSlot()
     async def send_write_reg(self, bytearr):
         self.append_command(bytearr)
-        self.logEdit.insertPlainText("Send command: " + str(bytearr) + "\n")
+        self.logEdit.insertPlainText("Send command: (" + bytearr[0:3].decode("utf-8")+") " + bytearr.hex(' ') + "\n")
 
     @qasync.asyncSlot()
     async def send_write_reg_now(self, bytearr):
         await self.handle_send(bytearr)
-        self.logEdit.insertPlainText("Send command: " + str(bytearr) + "\n")
+        self.logEdit.insertPlainText("Send command: (" + bytearr[0:3].decode("utf-8")+") " + bytearr.hex(' ') + "\n")
 
     @qasync.asyncSlot()
     async def send_command(self):
@@ -61,7 +61,7 @@ class Widget(Base, Form):
         if self.buffer_tail != self.buffer_head:
             if bytearr == b'\x00\x00\x00\x00\x00\x00\x00\x00':
                 await self.handle_send(bytearr)
-                self.command_buffer[self.buffer_tail] = b'\x00\x00\x00\x00\x00\x00\x00\x00' # reset value to give info that the betes were already sent
+                self.command_buffer[self.buffer_tail] = b'\x00\x00\x00\x00\x00\x00\x00\x00' # reset value to give info that the bytes were already sent
             self.buffer_tail += 1
             if self.buffer_tail >= self.buffer_size:
                 self.buffer_tail = 0
