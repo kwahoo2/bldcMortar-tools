@@ -36,15 +36,15 @@ python bldcMortar-tools.py
 
 ![Main page][mortar-page1]
 
-[mortar-page1]: https://raw.githubusercontent.com/kwahoo2/Mortar/main/.github/images/mortar-page1.png "Main page of the tool"
+[mortar-page1]: https://raw.githubusercontent.com/kwahoo2/bldcMortar-tools/main/.github/images/mortar-page1.png "Main page of the tool"
 
 ![Motorparams page][mortar-page2]
 
-[mortar-page2]: https://raw.githubusercontent.com/kwahoo2/Mortar/main/.github/images/mortar-page2.png "Motorparams page of the tool"
+[mortar-page2]: https://raw.githubusercontent.com/kwahoo2/bldcMortar-tools/main/.github/images/mortar-page2.png "Motorparams page of the tool"
 
 ![SysOpts page][mortar-page3]
 
-[mortar-page3]: https://raw.githubusercontent.com/kwahoo2/Mortar/main/.github/images/mortar-page3.png "SysOpts page of the tool"
+[mortar-page3]: https://raw.githubusercontent.com/kwahoo2/bldcMortar-tools/main/.github/images/mortar-page3.png "SysOpts page of the tool"
 
 
 ## License
