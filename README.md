@@ -22,7 +22,7 @@ or
 
 Install PySide6 and bleak modules.
 ```
-pip install pyside6 bleak
+pip install pyside6 bleak qasync
 ```
 
 Clone and run the script:
@@ -30,7 +30,7 @@ Clone and run the script:
 ```
 git clone https://github.com/kwahoo2/bldcMortar-tools
 cd bldcMortar-tools
-python bldcMortar-tools.py
+python bldcMortar_tools.py
 ```
 
 
